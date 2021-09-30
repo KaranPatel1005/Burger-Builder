@@ -1,0 +1,40 @@
+.ContactData{
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 2px 3px #eee;
+    border: 1px solid #eee;
+    margin-top: 50px;
+}
+.ContactData h4{
+    margin-top: 20px;
+}
+.ContactData form{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.ContactData button{
+    background-color: #5C9210;
+    color: #fff;
+    padding: 10px 20px 10px 20px;
+    margin: 20px 10px 10px 10px;
+    transition: 0.5s all;
+}
+.ContactData button:hover{
+    background-color: rgb(70, 110, 14);
+}
+
+.ContactData button:disabled:hover{
+    background-color: #5c921085;
+}
+
+@media screen and (min-width: 600px) {
+    .ContactData{
+        width: 500px;
+    }
+}

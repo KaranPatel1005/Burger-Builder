@@ -1,0 +1,11 @@
+.OrderSummary{
+
+    list-style: none;
+    margin: 10px 0;
+}
+.OrderSummary li{
+    padding-inline-start: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
