@@ -7,42 +7,42 @@ const Input = (props) => {
     let inputElement = null;
     const inputClasses = [];
 
-    if(props.invalid && props.shouldValidate && props.touched){
+    if (props.invalid && props.shouldValidate && props.touched) {
         inputClasses.push(styles.Invalid)
     }
 
-    switch (props.elementType){
+    switch (props.elementType) {
         case ('input'):
             inputElement = <input className={inputClasses.join(' ')}
-                        {...props.elementConfig} 
-                        value={props.value} onChange={props.changed}/>;
+                {...props.elementConfig}
+                value={props.value} onChange={props.changed} />;
             break;
-            case ('textarea'):
-                inputElement = <textarea className={inputClasses.join(' ')}
-                        {...props.elementConfig} 
-                        value={props.value} onChange={props.changed}/>;
-                break;
-            case ('select'):
-                inputElement = 
-                    <select className={inputClasses.join(' ')} value={props.value} onChange={props.changed}>
-                        <option selected value={null}> -- select an option -- </option>
-                        { props.elementConfig.options.map(
-                                option => {
-                                    return <option
-                                            key={option.value}
-                                            value={option.value}>
-                                                {option.displayValue}
-                                            </option>
-                                }
-                        ) }
-                    </select>;
-                break;
+        case ('textarea'):
+            inputElement = <textarea className={inputClasses.join(' ')}
+                {...props.elementConfig}
+                value={props.value} onChange={props.changed} />;
+            break;
+        case ('select'):
+            inputElement =
+                <select className={inputClasses.join(' ')} defaultValue={props.value} onChange={props.changed}>
+                    <option value={null}> -- select an option -- </option>
+                    {props.elementConfig.options.map(
+                        option => {
+                            return <option
+                                key={option.value}
+                                value={option.value}>
+                                {option.displayValue}
+                            </option>
+                        }
+                    )}
+                </select>;
+            break;
         default:
-            inputElement = <input 
-                        className={inputClasses.join(' ')}
-                        {...props.elementConfig} 
-                        value={props.value} 
-                        onChange={props.changed} />;
+            inputElement = <input
+                className={inputClasses.join(' ')}
+                {...props.elementConfig}
+                defaultValue={props.value}
+                onChange={props.changed} />;
     }
     return (
         <div className={styles.Input}>
